@@ -1,0 +1,15 @@
+{
+  "name": "brhmmsms/elastica",
+  "description": "A getting started project: ElasticSearch & Elastica",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Abraham Mesa",
+      "email": "contact@abrahammesa.com"
+    }
+  ],
+  "require": {
+    "ruflin/elastica": "3.2.3"
+  }
+}

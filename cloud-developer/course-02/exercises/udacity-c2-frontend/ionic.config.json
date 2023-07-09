@@ -1,0 +1,7 @@
+{
+  "name": "udacity-c2-frontend",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

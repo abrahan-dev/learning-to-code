@@ -1,0 +1,185 @@
+<html>
+<head>
+    <title>D3 Poc</title>
+    <style>
+        svg#barchart2 {
+            font: 15px sans-serif;
+            text-align: right;
+            color: white;
+        }
+
+        svg#barchart2 text {
+            font-weight: bold;
+        }
+
+        svg#barchart3 {
+            font: 5px sans-serif;
+            text-align: right;
+            color: grey;
+            margin: 5rem;
+        }
+
+        svg#barchart3 g {
+            font-size: 1rem;
+        }
+
+        svg#barchart3 text {
+            font-size: .8rem;
+        }
+
+        svg#barchart3 text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<svg id="barchart3" width='1000' height='500'></svg>
+<hr>
+<svg id="barchart2"></svg>
+<hr>
+<h3>Today is a beautiful day!!</h3>
+<hr>
+<ul></ul>
+<hr>
+<button>Click</button>
+<p id="message"></p>
+<hr>
+<svg id="rect" style="width: 100px"></svg>
+<hr>
+<svg id="barchart" width='200' height='500'></svg>
+<hr>
+<script src='https://d3js.org/d3.v5.min.js'></script>
+
+<script>
+    //barchart3
+    const databar2 = [{"letter":"A","frequency":0.08167},{"letter":"B","frequency":0.01492},{"letter":"C","frequency":0.02782},{"letter":"D","frequency":0.04253},{"letter":"E","frequency":0.12702},{"letter":"F","frequency":0.02288},{"letter":"G","frequency":0.02015},{"letter":"H","frequency":0.06094},{"letter":"I","frequency":0.06966},{"letter":"J","frequency":0.00153},{"letter":"K","frequency":0.00772},{"letter":"L","frequency":0.04025},{"letter":"M","frequency":0.02406},{"letter":"N","frequency":0.06749},{"letter":"O","frequency":0.07507},{"letter":"P","frequency":0.01929},{"letter":"Q","frequency":0.00095},{"letter":"R","frequency":0.05987},{"letter":"S","frequency":0.06327},{"letter":"T","frequency":0.09056},{"letter":"U","frequency":0.02758},{"letter":"V","frequency":0.00978},{"letter":"W","frequency":0.0236},{"letter":"X","frequency":0.0015},{"letter":"Y","frequency":0.01974},{"letter":"Z","frequency":0.00074}];
+    const margin = ({top: 20, right: 0, bottom: 30, left: 40});
+    const width2 = 1000;
+    const height = 500;
+
+    y = d3.scaleLinear()
+        .domain([0, d3.max(databar2, d => d.frequency)])
+        .range([height - margin.bottom, margin.top]);
+
+    x = d3.scaleBand()
+        .domain(databar2.map(d => d.letter))
+        .rangeRound([margin.left, width2 - margin.right])
+        .padding(0.1);
+
+    const svg2 = d3.select("svg#barchart3")
+        .attr("viewBox", [0, 0, width2, height]);
+
+    yTitle = g => g.append("text")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+        .attr("y", 10)
+        .text("Frequency");
+
+    yAxis = g => g
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y).ticks(null, "%"))
+        .call(g => g.select(".domain").remove());
+
+    xAxis = g => g
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).tickSizeOuter(0))
+
+    svg2.append("g")
+        .attr("fill", "steelblue")
+        .selectAll("rect")
+        .data(databar2)
+        .join("rect")
+        .attr("x", d => x(d.letter))
+        .attr("y", d => y(d.frequency))
+        .attr("height", d => y(0) - y(d.frequency))
+        .attr("width", x.bandwidth());
+
+    svg2.append("g")
+        .call(xAxis);
+
+    svg2.append("g")
+        .call(yAxis);
+
+    svg2.call(yTitle);
+
+    //barchart2
+    const databar = [4, 8, 15, 16, 23, 42];
+    const width = 500;
+
+    x = d3.scaleLinear()
+        .domain([0, d3.max(databar)])
+        .range([0, width]);
+
+    y = d3.scaleBand()
+        .domain(d3.range(databar.length))
+        .range([0, 30 * databar.length]);
+
+    const svgbar = d3.select("svg#barchart2")
+        .attr("width", width)
+        .attr("height", y.range()[1])
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "10")
+        .attr("text-anchor", "end");
+
+    const bar = svgbar.selectAll("g")
+        .data(databar)
+        .join("g")
+        .attr("transform", (d, i) => `translate(0,${y(i)})`);
+
+    bar.append("rect")
+        .attr("fill", "steelblue")
+        .attr("width", x)
+        .attr("height", y.bandwidth() - 1.5);
+
+    bar.append("text")
+        .attr("fill", "white")
+        .attr("x", d => x(d) - 7)
+        .attr("y", y.bandwidth() / 2)
+        .attr("dy", "0.35em")
+        .text(d => d);
+
+    // selection
+    d3.select('h3').style('color', 'darkblue');
+    d3.select('h3').style('font-size', '24px');
+
+    // data binding
+    const fruits = ['apple', 'mango', 'banana', 'orange'];
+    d3.select('ul')
+        .selectAll('li')
+        .data(fruits)
+        .enter()
+        .append('li')
+        .text(function(d) { return d; });
+
+    // creating svg
+    let svg = d3.select('svg#rect');
+    svg.append('rect')
+        .attr('x', 50)
+        .attr('y', 50)
+        .attr('width', 50)
+        .attr('height', 50)
+        .attr('fill', 'red');
+
+    // creating barchart
+    let data = [80, 120, 60, 150, 200];
+    const barHeight = 20;
+    d3.select('svg#barchart')
+        .selectAll('rect')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('width', function(d) {  return d; })
+        .attr('height', barHeight - 1)
+        .attr('transform', function(d, i) {
+            return "translate(0," + i * barHeight + ")";
+        });
+
+    // event handling
+    d3.select('button')
+        .on('click', function () {
+            d3.select('p#message')
+                .text('Hello');
+        });
+</script>
+</body>
+</html>

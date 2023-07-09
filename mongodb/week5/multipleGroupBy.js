@@ -1,0 +1,1 @@
+db.data.aggregate([{$group: {_id: {"state": "$State", "aeropuerto": "$Airport"}}}]);

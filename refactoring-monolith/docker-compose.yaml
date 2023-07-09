@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+    udagram-api-feed:
+        container_name: udagram_api_feed
+        restart: unless-stopped
+        build:
+            context: ${PWD}/udagram-api-feed
+            target: development
+        env_file:
+            - ./udagram-api-feed/var.env
+        environment:
+            - HOST=localhost
+        ports:
+            - 8001:8001
+        volumes:
+            - ${PWD}/udagram-api-feed:/usr/src/app
+            - $HOME/.aws/credentials:/root/.aws/credentials
+
+    udagram-api-users:
+        container_name: udagram_api_users
+        restart: unless-stopped
+        build:
+            context: ${PWD}/udagram-api-users
+            target: development
+        env_file:
+            - ./udagram-api-users/var.env
+        environment:
+            - HOST=localhost
+        ports:
+            - 8002:8002
+        volumes:
+            - ${PWD}/udagram-api-users:/usr/src/app
+
+    udagram-frontend:
+        container_name: udagram_frontend
+        restart: unless-stopped
+        build:
+            context: ${PWD}/udagram-frontend
+            target: development
+        environment:
+            - HOST=localhost
+        ports:
+            - 8100:80
+        volumes:
+            - ${PWD}/udagram-frontend:/usr/src/app

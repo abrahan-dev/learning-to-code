@@ -1,0 +1,586 @@
+# dune fmt -w
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/mesa/Repository/ocaml/helloworld
+# Auto-detected concurrency: 8
+$ /Users/mesa/.opam/default/bin/ocamlc.opt -config > /var/folders/1k/m_gl7lps3z502v_p0708kcbh0000gn/T/dune_426fbe_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/Users/mesa/.opam/default/bin"
+#  ; ocaml = Ok External "/Users/mesa/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/Users/mesa/.opam/default/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/Users/mesa/.opam/default/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/Users/mesa/.opam/default/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/Users/mesa/.opam/default/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "/Users/mesa/.opam/default/lib/ocaml:/Users/mesa/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/mesa/.opam/default/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/mesa/Repository/ocaml/helloworld"
+#        ; "INSIDE_DUNE" :
+#            "/Users/mesa/Repository/ocaml/helloworld/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/mesa/Repository/ocaml/helloworld/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/mesa/Repository/ocaml/helloworld/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/mesa/Repository/ocaml/helloworld/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths =
+#      [ External "/Users/mesa/.opam/default/lib/ocaml"
+#      ; External "/Users/mesa/.opam/default/lib"
+#      ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "5.0.0"
+#      ; standard_library_default = "/Users/mesa/.opam/default/lib/ocaml"
+#      ; standard_library = "/Users/mesa/.opam/default/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin22.5.0"
+#      ; target = "aarch64-apple-darwin22.5.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X032"
+#      ; cmi_magic_number = "Caml1999I032"
+#      ; cmo_magic_number = "Caml1999O032"
+#      ; cma_magic_number = "Caml1999A032"
+#      ; cmx_magic_number = "Caml1999Y032"
+#      ; cmxa_magic_number = "Caml1999Z032"
+#      ; ast_impl_magic_number = "Caml1999M032"
+#      ; ast_intf_magic_number = "Caml1999N032"
+#      ; cmxs_magic_number = "Caml1999D032"
+#      ; cmt_magic_number = "Caml1999T032"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 3e1c909..4994152 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -160,7 +160,6 @@ type person =
+>    ; surname : string
+>    ; age : int
+>    }
+> -  
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+>  
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 4994152..733ec21 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -156,10 +156,10 @@ let t = (1, "one", '1')
+>  
+>  (* Record data type *)
+>  type person =
+> -  { first_name : string
+> -  ; surname : string
+> -  ; age : int
+> -  }
+> +    { first_name : string
+> +    ; surname : string
+> +    ; age : int
+> +    }
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+>  
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 733ec21..d8a99c4 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -155,11 +155,7 @@ map (map (fun x -> x * 2)) [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ]
+>  let t = (1, "one", '1')
+>  
+>  (* Record data type *)
+> -type person =
+> -    { first_name : string
+> -    ; surname : string
+> -    ; age : int
+> -    }
+> +type person = { first_name : string; surname : string; age : int }
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+>  
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index d8a99c4..76b5fc9 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -26,14 +26,12 @@ square 50
+>  let square_is_even x = square x mod 2 = 0;;
+>  
+>  square_is_even 50;;
+> -
+>  square_is_even 51
+>  
+>  (* Boolean operators are &&, || *)
+>  let ordered a b c = a <= b && b <= c;;
+>  
+>  ordered 1 2 3;;
+> -
+>  ordered 1 3 2
+>  
+>  (* We can work with floats using the dot notation. Type casts have to be
+> @@ -45,18 +43,13 @@ let average a b = (a +. b) /. 2.0
+>     instead of looking for a function named range above. *)
+>  (* The :: operator is used to prepend an element to a list. *)
+>  let rec range a b = if a > b then [] else a :: range (a + 1) b
+> -
+>  let digits = range 0 9;;
+>  
+>  (* primitives *)
+>  1 + 2;;
+> -
+>  1.0 +. 2.0;;
+> -
+>  false;;
+> -
+>  'c';;
+> -
+>  "Help me!"
+>  
+>  (* Pattern matching *)
+> @@ -64,26 +57,17 @@ false;;
+>  let rec factorial n = if n <= 1 then 1 else n * factorial (n - 1)
+>  
+>  (* Factorial function with pattern matching *)
+> -let rec factorial n =
+> -  match n with
+> -  | 0 | 1 -> 1
+> -  | _ -> n * factorial (n - 1)
+> +let rec factorial n = match n with 0 | 1 -> 1 | _ -> n * factorial (n - 1)
+>  
+>  (* A simpler version without the keyword "match" *)
+> -let rec factorial = function
+> -  | 0 | 1 -> 1
+> -  | n -> n * factorial (n - 1)
+> -;;
+> +let rec factorial = function 0 | 1 -> 1 | n -> n * factorial (n - 1);;
+>  
+>  factorial 5;;
+>  
+>  (* Lists *)
+>  [];;
+> -
+>  [ 1; 2; 3 ];;
+> -
+>  [ false; true; false ];;
+> -
+>  [ [ 1; 2 ]; [ 3; 4 ] ];;
+>  
+>  (* Add one element to the front of a list with the :: operator. *)
+> @@ -99,41 +83,23 @@ List.hd [ 1; 2; 3 ];;
+>  List.tl [ 1; 2; 3 ]
+>  
+>  (* A function over a list with pattern matching. *)
+> -let rec total l =
+> -  match l with
+> -  | [] -> 0
+> -  | h :: t -> h + total t
+> -;;
+> +let rec total l = match l with [] -> 0 | h :: t -> h + total t;;
+>  
+>  total [ 1; 3; 5; 3; 1 ]
+>  
+> -let rec length l =
+> -  match l with
+> -  | [] -> 0
+> -  | _ :: t -> 1 + length t
+> -;;
+> +let rec length l = match l with [] -> 0 | _ :: t -> 1 + length t;;
+>  
+>  length [ 1; 2; 3 ];;
+> -
+>  length [ false; true; false ];;
+> -
+>  length [ "1"; "2"; "3" ]
+>  
+>  (* A function that appends an element to the end of a list. *)
+> -let rec append a b =
+> -  match a with
+> -  | [] -> b
+> -  | h :: t -> h :: append t b
+> -;;
+> +let rec append a b = match a with [] -> b | h :: t -> h :: append t b;;
+>  
+>  append [ 1; 2; 3 ] [ 4; 5; 6 ]
+>  
+>  (* A function that maps a function on each element of a list. *)
+> -let rec map f l =
+> -  match l with
+> -  | [] -> []
+> -  | h :: t -> f h :: map f t
+> -;;
+> +let rec map f l = match l with [] -> [] | h :: t -> f h :: map f t;;
+>  
+>  map total [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ];;
+>  
+> @@ -142,13 +108,10 @@ map (fun x -> x * 2) [ 1; 2; 3 ]
+>  
+>  (* Partial application of functions *)
+>  let add a b = a + b
+> -
+>  let f = add 1;;
+>  
+>  f 7;;
+> -
+>  map (add 6) [ 1; 2; 3 ];;
+> -
+>  map (map (fun x -> x * 2)) [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ]
+>  
+>  (* Tuple data type *)
+> @@ -158,5 +121,4 @@ let t = (1, "one", '1')
+>  type person = { first_name : string; surname : string; age : int }
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+> -
+>  let s = frank.surname
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 76b5fc9..d8a99c4 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -26,12 +26,14 @@ square 50
+>  let square_is_even x = square x mod 2 = 0;;
+>  
+>  square_is_even 50;;
+> +
+>  square_is_even 51
+>  
+>  (* Boolean operators are &&, || *)
+>  let ordered a b c = a <= b && b <= c;;
+>  
+>  ordered 1 2 3;;
+> +
+>  ordered 1 3 2
+>  
+>  (* We can work with floats using the dot notation. Type casts have to be
+> @@ -43,13 +45,18 @@ let average a b = (a +. b) /. 2.0
+>     instead of looking for a function named range above. *)
+>  (* The :: operator is used to prepend an element to a list. *)
+>  let rec range a b = if a > b then [] else a :: range (a + 1) b
+> +
+>  let digits = range 0 9;;
+>  
+>  (* primitives *)
+>  1 + 2;;
+> +
+>  1.0 +. 2.0;;
+> +
+>  false;;
+> +
+>  'c';;
+> +
+>  "Help me!"
+>  
+>  (* Pattern matching *)
+> @@ -57,17 +64,26 @@ false;;
+>  let rec factorial n = if n <= 1 then 1 else n * factorial (n - 1)
+>  
+>  (* Factorial function with pattern matching *)
+> -let rec factorial n = match n with 0 | 1 -> 1 | _ -> n * factorial (n - 1)
+> +let rec factorial n =
+> +  match n with
+> +  | 0 | 1 -> 1
+> +  | _ -> n * factorial (n - 1)
+>  
+>  (* A simpler version without the keyword "match" *)
+> -let rec factorial = function 0 | 1 -> 1 | n -> n * factorial (n - 1);;
+> +let rec factorial = function
+> +  | 0 | 1 -> 1
+> +  | n -> n * factorial (n - 1)
+> +;;
+>  
+>  factorial 5;;
+>  
+>  (* Lists *)
+>  [];;
+> +
+>  [ 1; 2; 3 ];;
+> +
+>  [ false; true; false ];;
+> +
+>  [ [ 1; 2 ]; [ 3; 4 ] ];;
+>  
+>  (* Add one element to the front of a list with the :: operator. *)
+> @@ -83,23 +99,41 @@ List.hd [ 1; 2; 3 ];;
+>  List.tl [ 1; 2; 3 ]
+>  
+>  (* A function over a list with pattern matching. *)
+> -let rec total l = match l with [] -> 0 | h :: t -> h + total t;;
+> +let rec total l =
+> +  match l with
+> +  | [] -> 0
+> +  | h :: t -> h + total t
+> +;;
+>  
+>  total [ 1; 3; 5; 3; 1 ]
+>  
+> -let rec length l = match l with [] -> 0 | _ :: t -> 1 + length t;;
+> +let rec length l =
+> +  match l with
+> +  | [] -> 0
+> +  | _ :: t -> 1 + length t
+> +;;
+>  
+>  length [ 1; 2; 3 ];;
+> +
+>  length [ false; true; false ];;
+> +
+>  length [ "1"; "2"; "3" ]
+>  
+>  (* A function that appends an element to the end of a list. *)
+> -let rec append a b = match a with [] -> b | h :: t -> h :: append t b;;
+> +let rec append a b =
+> +  match a with
+> +  | [] -> b
+> +  | h :: t -> h :: append t b
+> +;;
+>  
+>  append [ 1; 2; 3 ] [ 4; 5; 6 ]
+>  
+>  (* A function that maps a function on each element of a list. *)
+> -let rec map f l = match l with [] -> [] | h :: t -> f h :: map f t;;
+> +let rec map f l =
+> +  match l with
+> +  | [] -> []
+> +  | h :: t -> f h :: map f t
+> +;;
+>  
+>  map total [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ];;
+>  
+> @@ -108,10 +142,13 @@ map (fun x -> x * 2) [ 1; 2; 3 ]
+>  
+>  (* Partial application of functions *)
+>  let add a b = a + b
+> +
+>  let f = add 1;;
+>  
+>  f 7;;
+> +
+>  map (add 6) [ 1; 2; 3 ];;
+> +
+>  map (map (fun x -> x * 2)) [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ]
+>  
+>  (* Tuple data type *)
+> @@ -121,4 +158,5 @@ let t = (1, "one", '1')
+>  type person = { first_name : string; surname : string; age : int }
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+> +
+>  let s = frank.surname
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl test/helloworld.ml) > _build/default/test/.formatted/helloworld.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index d8a99c4..4994152 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -155,7 +155,11 @@ map (map (fun x -> x * 2)) [ [ 1; 2 ]; [ 3; 4 ]; [ 5; 6 ] ]
+>  let t = (1, "one", '1')
+>  
+>  (* Record data type *)
+> -type person = { first_name : string; surname : string; age : int }
+> +type person =
+> +  { first_name : string
+> +  ; surname : string
+> +  ; age : int
+> +  }
+>  
+>  let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+>  
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index c846b23..cad7518 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -166,4 +166,8 @@ let frank = { first_name = "Frank"; surname = "Smith"; age = 40 }
+>  let s = frank.surname
+>  
+>  (* Custom data types *)
+> -type suit = Spades | Hearts | Diamonds | Clubs
+> +type suit =
+> +  | Spades
+> +  | Hearts
+> +  | Diamonds
+> +  | Clubs
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 87092d0..7fc1bf8 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -172,4 +172,4 @@ type suit =
+>    | Diamonds
+>    | Clubs
+>  
+> -  let s = Spades
+> \ No newline at end of file
+> +let s = Spades
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index 3ef2d23..64a8f63 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -172,4 +172,4 @@ type suit =
+>    | Diamonds
+>    | Clubs
+>  
+> -let s = [ Spades; Hearts]
+> +let s = [ Spades; Hearts ]
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index e79a971..4456dfe 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -175,8 +175,8 @@ type suit =
+>  let s = [ Spades; Hearts ]
+>  
+>  type color =
+> -   | Red
+> -   | Blue
+> -   | Green
+> -   | Yellow
+> -   | RGB of int * int * int;;
+> +  | Red
+> +  | Blue
+> +  | Green
+> +  | Yellow
+> +  | RGB of int * int * int
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index b48b37f..42d86c5 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -181,4 +181,4 @@ type color =
+>    | Yellow
+>    | RGB of int * int * int
+>  
+> -  let l = [Red; Blue; RGB (30, 255, 154)];;
+> \ No newline at end of file
+> +let l = [ Red; Blue; RGB (30, 255, 154) ]
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml
+$ /opt/homebrew/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/first-hour.ml _build/default/bin/.formatted/first-hour.ml
+> diff --git a/_build/default/bin/first-hour.ml b/_build/default/bin/.formatted/first-hour.ml
+> index b08e05f..5ea6fb3 100644
+> --- a/_build/default/bin/first-hour.ml
+> +++ b/_build/default/bin/.formatted/first-hour.ml
+> @@ -182,6 +182,5 @@ let l = [ Black; RGB (30, 255, 154) ]
+>  
+>  (* Polimorphic and recursive custom data types *)
+>  type 'a tree =
+> -   | Leaf
+> -   | Node of 'a tree * 'a * 'a tree;;
+> -   
+> \ No newline at end of file
+> +  | Leaf
+> +  | Node of 'a tree * 'a * 'a tree
+[1]
+$ (cd _build/default && /Users/mesa/.opam/default/bin/ocamlformat --impl bin/first-hour.ml) > _build/default/bin/.formatted/first-hour.ml

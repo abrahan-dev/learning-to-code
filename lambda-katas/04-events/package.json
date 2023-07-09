@@ -1,0 +1,31 @@
+{
+  "name": "serverless-framework-crud-lambda",
+  "version": "1.0.0",
+  "description": "The 02-crud-lambda port to Serverless Framework",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-xray-sdk": "^2.2.0",
+    "elasticsearch": "^15.4.1",
+    "http-aws-es": "^6.0.0",
+    "jimp": "^0.6.1",
+    "source-map-support": "^0.5.11",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.17",
+    "@types/elasticsearch": "^5.0.32",
+    "@types/http-aws-es": "^6.0.0",
+    "@types/node": "^10.14.4",
+    "@types/uuid": "^8.3.0",
+    "aws-sdk": "^2.433.0",
+    "serverless-aws-documentation": "^1.1.0",
+    "serverless-reqvalidator-plugin": "^1.0.3",
+    "serverless-webpack": "^5.2.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6"
+  }
+}

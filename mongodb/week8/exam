@@ -1,0 +1,105 @@
+My answers, before validation :
+
+QUESTION 1
+
+db.messages.find({ "$and" : [
+    { "headers.From" : "andrew.fastow@enron.com" },
+    { "headers.To" : { "$in" : ["jeff.skilling@enron.com"]} }
+]}).count();
+
+QUESTION 2
+
+db.messages.aggregate([
+    { "$unwind" : "$headers.To" },
+    { "$group" : {
+            "_id" : { 
+                "msg" : "$headers.Message-ID",
+                "from" : "$headers.From",
+                "to" : "$headers.To"
+            }
+        }
+    },
+    { "$group" : {
+            "_id" : { 
+                "from" : "$_id.from",
+                "to" : "$_id.to" 
+            },
+            "count" : { "$sum" : 1 }
+        }
+    },
+    { "$sort" : { "count": -1 } },
+    { "$limit" : 1 }
+]);
+
+QUESTION 3 
+
+db.messages.find(
+    { "headers.Message-ID" : "<8147308.1075851042335.JavaMail.evans@thyme>" }
+);
+db.messages.update(
+    { "headers.Message-ID" : "<8147308.1075851042335.JavaMail.evans@thyme>" },
+    { "$push" : { "headers.To" : "mrpotatohead@mongodb.com" } }
+);
+
+QUESTION 4
+
+this.incrementLikes = function(permalink, comment_ordinal, callback) {
+    "use strict";
+    var selector_example = {};
+    selector_example['comments.' + comment_ordinal + '.num_likes'] = 1;
+    var query = { 'permalink' : permalink };
+    var operator = { '$inc' : selector_example };
+    posts.findAndModify(query, [], operator, {}, function(err, doc) {
+        if (err) {
+            throw err;
+        }
+        callback(err, doc);
+    });
+};
+
+QUESTION 5
+
+_id_      X
+a, b      V
+a, c      V
+c         V
+a, b, -c  V
+
+QUESTION 6
+
+Remove all indexes from the collection, leaving only the index on _id in place 
+Set w=0, j=0 on writes 
+
+QUESTION 7
+
+mongoimport --db photos --collection images photos/images.json
+mongoimport --db photos --collection albums albums.json
+db.albums.createIndex( { "images" : 1 } );
+db.images.find( { "tags" : "kittens" } ).count(); //49932
+var images = db.images.find({});
+while(images.hasNext()) {
+    var image = images.next();
+    var query = { "images" : image._id };
+    var album_found = db.albums.find(query).count();
+    if(album_found === 0) {
+        db.images.remove( { "_id" : image._id } );
+    }
+} //10263
+db.images.find( { "tags" : "kittens" } ).count(); //44822
+
+QUESTION 8
+
+Maybe, it depends whether or not Node 2 has processed the write. 
+If node 2 has processed the write, no revert is needed.
+
+QUESTION 9
+
+patient_id 
+    -> Good cardinality
+    -> Not increase monotonically (on records collection)
+    -> Not multikey
+
+QUESTION 10
+
+The query avoided sorting the documents because it was able to use an index's ordering.
+The query scanned every document in the collection. 

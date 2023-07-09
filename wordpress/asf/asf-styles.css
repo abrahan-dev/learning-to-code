@@ -1,0 +1,37 @@
+/* ASF STYLES */
+
+blockquote.asf-bq{
+	font-style: normal;
+	border: 1px dotted green;
+	background-color: #F4F4F4;
+}
+
+div.asf-content{
+	color: inherit;
+	margin: auto;
+}
+
+div.asf-names-list{
+	background-color: inherit;
+	width: 60%;
+	margin: auto;
+}
+
+div.asf-thumb{
+	background-color: inherit;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+p.asf-p {
+	text-transform: uppercase;
+	text-indent: 20%;
+	font-weight: bold;
+}
+
+p.asf-p-thumb {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}

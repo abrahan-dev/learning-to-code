@@ -1,0 +1,22 @@
+{
+  "name": "docker/test",
+  "description": "Docker php hello world",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Abrahán Mesa",
+      "email": "juan@google.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "": "src/" }
+  },
+  "require": {
+    "monolog/monolog": "2.1.0",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.5.5"
+  }
+}

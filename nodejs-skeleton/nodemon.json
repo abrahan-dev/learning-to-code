@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "ignore": [
+    "views/*",
+    "public/*",
+    ".git",
+    "node_modules/*"
+  ],
+  "watch": [
+    "*.js"
+  ]
+}

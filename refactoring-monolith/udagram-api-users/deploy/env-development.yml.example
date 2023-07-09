@@ -1,0 +1,13 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name:
+type: Opaque
+data:
+  POSTGRES_USERNAME:
+  POSTGRES_PASSWORD:
+  POSTGRES_HOST:
+  POSTGRES_DB:
+  JWT_SECRET:
+  URL:
+  PORT_API_USER:

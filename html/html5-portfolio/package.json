@@ -1,0 +1,30 @@
+{
+  "name": "defnx-ud-portfolio",
+  "version": "1.0.0",
+  "description": "I am Abraham Mesa, full stack developer, and this is my portfolio.",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defnx/ud_portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "Abraham Mesa",
+    "developer"
+  ],
+  "author": "Abraham Mesa Mesa",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/defnx/ud_portfolio/issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-uglify": "^2.2.1"
+  },
+  "dependencies": {
+    "blazy": "^1.8.2"
+  }
+}
