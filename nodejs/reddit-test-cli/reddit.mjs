@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+"use strict";
+
 // import our packages
 import open from 'open'
 import fetch from 'node-fetch'

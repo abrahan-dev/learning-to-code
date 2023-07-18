@@ -1,3 +1,5 @@
+"use strict";
+
 import { readFile, writeFile } from "fs/promises";
 
 // it builds the absolute path to the template.html file and returns a string in utf-8 encoding
