@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #efefef;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #43281c;
+
+  .brand {
+    color: #fbf2c0;
+
+    .logo {
+      position: relative;
+      top: 4px;
+      height: 25px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.cart-items {
+  grid-area: cart-items;
+  background-color: #eee1d5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cart-name {
+  grid-area: cart-name;
+  background-color: #eee1d5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cart-payment {
+  grid-area: cart-payment;
+  background-color: #eee1d5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.total {
+  grid-area: total;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.totals-table {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.final-totals {
+  font-weight: bold;
+}
+
+.place-order {
+  background-color: #deb993;
+  border: none;
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 100px;
+  font-size: 16px;
+}
+
+.shopping-cart {
+  display: grid;
+  row-gap: 15px;
+  column-gap: 15px;
+  margin: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "cart-items cart-name"
+    "cart-items cart-payment"
+    "total      total";
+}
+
+.cart-title {
+  color: #885a2d;
+  font-weight: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.items {
+  text-decoration: none;
+  padding: 0%;
+  margin: 0%;
+}
+
+.item-quantity {
+  grid-area: quantity;
+  text-align: center;
+  font-size: 17px;
+  color: black;
+}
+
+.item-title {
+  grid-area: title;
+  font-size: 17px;
+  color: black;
+}
+
+.item-price {
+  grid-area: price;
+  text-align: center;
+  font-size: 17px;
+  color: black;
+}
+
+.item-options-list {
+  grid-area: options;
+  color: #b08968;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.item-option {
+  margin-bottom: 5px;
+}
+
+.item {
+  border-bottom: 2px solid #ddb892;
+  display: grid;
+  padding: 10px 0;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-areas:
+    "quantity title   price"
+    "quantity options price";
+  row-gap: 8px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.order-input {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px #885a2d solid;
+  padding: 8px;
+  border-radius: 100px;
+  width: 100%;
+  text-indent: 18px;
+  font-size: 18px;
+}
+
+.order-input.short {
+  width: 120px;
+}
+
+.input-label {
+  color: #885a2d;
+  background-color: #eee1d5;
+  font-size: 11px;
+  position: absolute;
+  left: 25px;
+  top: -7px;
+  padding: 0 2px;
+}

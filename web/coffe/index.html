@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee master</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav-bar">
+      <h1 class="brand">
+        <img
+          src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png"
+          alt="coffee masters logo"
+          class="logo"
+        />Coffee master
+      </h1>
+    </header>
+    <section class="shopping-cart">
+      <div class="cart-items">
+        <h2 class="cart-title">Items</h2>
+        <ul class="items">
+          <li class="item">
+            <div class="item-quantity">1x</div>
+            <div class="item-title">Capuccino</div>
+            <div class="item-price">$4.50</div>
+            <ul class="item-options-list">
+              <li class="item-option">Extra shot</li>
+              <li class="item-option">Extra milk</li>
+            </ul>
+          </li>
+          <li class="item">
+            <div class="item-quantity">2x</div>
+            <div class="item-title">Latte</div>
+            <div class="item-price">$8.50</div>
+            <ul class="item-options-list">
+              <li class="item-option">Soja milk</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="cart-name">
+        <h2 class="cart-title">Name</h2>
+        <div class="input-group">
+          <label for="order-name" class="input-label">Name for the order</label>
+          <input id="order-name" class="order-input" placeholder="" />
+        </div>
+      </div>
+      <div class="cart-payment">
+        <h2 class="cart-title">Payment</h2>
+        <div class="input-group">
+          <label for="order-name" class="input-label">Card number</label>
+          <input id="order-name" class="order-input" placeholder="" />
+        </div>
+        <div class="input-group">
+          <label for="order-name" class="input-label">CCV number</label>
+          <input id="order-name" class="order-input short" placeholder="" />
+        </div>
+      </div>
+      <section class="total">
+        <table class="totals-table">
+            <tbody>
+              <tr>
+                <td>Subtotal:</td>
+                <td>$19.27</td>
+              </tr>
+              <tr>
+                <td>Tax:</td>
+                <td>$0.96</td>
+              </tr>
+              <tr class="final-totals">
+                <td>Total:</td>
+                <td>$20.23</td>
+              </tr>
+            </tbody>
+          </table>
+        <button class="place-order">Place order</button>
+      </section>
+    </section>
+  </body>
+</html>
