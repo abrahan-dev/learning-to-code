@@ -1,0 +1,18 @@
+{
+    "cSpell.words": [
+        "arange",
+        "countplot",
+        "dataframe",
+        "dataframes",
+        "dropna",
+        "dtype",
+        "iloc",
+        "isna",
+        "ndarray",
+        "ndim",
+        "setdiff",
+        "usecols",
+        "xlabel",
+        "xticks"
+    ]
+}
