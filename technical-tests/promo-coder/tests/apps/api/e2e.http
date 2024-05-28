@@ -1,0 +1,64 @@
+POST /promo-codes/ HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+  "name": "WeatherCode",
+  "advantage": { "percent": 20 },
+  "restrictions": [
+    {
+      "date": {
+        "after": "2019-01-01",
+        "before": "2024-06-30"
+      }
+    },
+    {
+      "or": [
+        {
+          "age": {
+            "eq": 40
+          }
+        },
+        {
+          "and": [
+            {
+              "age": {
+                "gt": 0
+              }
+            },
+            {
+              "weather": {
+                "is": "clear",
+                "temp": {
+                  "gt": 15
+                },
+              }
+            },
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+###
+
+POST /promo-codes/checker/ HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+  "promocode_name": "WeatherCode",
+  "arguments": {
+    "age": -2,
+    "town": "Lyon"
+  }
+}
+
+###
+
+GET / HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+###

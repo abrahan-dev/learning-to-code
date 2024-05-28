@@ -14,5 +14,6 @@
         "usecols",
         "xlabel",
         "xticks"
-    ]
+    ],
+    "vsicons.presets.nestjs": true
 }
