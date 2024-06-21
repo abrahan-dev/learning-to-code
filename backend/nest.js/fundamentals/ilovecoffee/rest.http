@@ -1,0 +1,29 @@
+GET http://localhost:3000/coffees
+
+###
+
+GET http://localhost:3000/coffees/123
+
+###
+
+POST http://localhost:3000/coffees
+content-type: application/json
+
+{
+    "name": "Madagascar"
+}
+
+###
+
+PATCH http://localhost:3000/coffees/123
+Content-Type: application/json
+
+{
+    "name": "Colombia"
+}
+
+###
+
+DELETE http://localhost:3000/coffees/123
+
+###
