@@ -7,13 +7,28 @@
         "dropna",
         "dtype",
         "iloc",
+        "ilovecoffee",
         "isna",
         "ndarray",
         "ndim",
+        "nestjs",
+        "postgres",
         "setdiff",
         "usecols",
         "xlabel",
         "xticks"
     ],
-    "vsicons.presets.nestjs": true
+    "vsicons.presets.nestjs": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "ilovecoffee-dev",
+            "database": "ilovecoffee",
+            "password": "password",
+            "username": "user"
+        }
+    ]
 }
