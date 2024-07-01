@@ -1,4 +1,4 @@
-GET http://localhost:3000/coffees?limit=4&offset=25
+GET http://localhost:3000/coffees?limit=4&offset=1
 
 ###
 
@@ -10,9 +10,9 @@ POST http://localhost:3000/coffees
 content-type: application/json
 
 {
-    "name": "Madagascar 1",
-    "brand": "Carrefour 1",
-    "flavors": ["strawberry 1"]
+    "name": "Madagascar x",
+    "brand": "Carrefour x",
+    "flavors": ["strawberry"]
 }
 
 ###
